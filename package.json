@@ -1,0 +1,31 @@
+{
+    "name": "image-opener",
+    "description": "Opens high res image of tracks, artists, playlists, profiles etc...",
+    "author": "Tetrax-10",
+    "license": "MIT",
+    "homepage": "https://github.com/Tetrax-10/Spicetify-Extensions/tree/master/Image-Opener#readme",
+    "main": "./src/app.tsx",
+    "scripts": {
+        "format": "prettier --write .",
+        "lint": "eslint src",
+        "start": "npm run spicetify-enable-devtools && npm run watch",
+        "watch": "concurrently \"npm run spicetify-watch\" \"npm run watch-ext\"",
+        "build": "spicetify-creator",
+        "build-local": "spicetify-creator --out=dist --minify",
+        "watch-ext": "spicetify-creator --watch",
+        "spicetify-enable-devtools": "spicetify enable-devtools -q",
+        "spicetify-watch": "spicetify -e watch tetraxDiscordInviter.js -q",
+        "update-types": "curl -s -o ./src/types/globals.d.ts https://raw.githubusercontent.com/spicetify/spicetify-cli/master/globals.d.ts"
+    },
+    "devDependencies": {
+        "@types/react": "^18.2.7",
+        "@types/react-dom": "^18.2.4",
+        "concurrently": "^8.0.1",
+        "eslint": "^8.41.0",
+        "eslint-plugin-import": "^2.27.5",
+        "eslint-plugin-react": "^7.32.2",
+        "prettier": "^2.8.8",
+        "sass": "^1.62.1",
+        "spicetify-creator": "^1.0.13"
+    }
+}

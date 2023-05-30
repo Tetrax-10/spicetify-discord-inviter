@@ -56,10 +56,10 @@ export function DividerItem() {
     )
 }
 
-export function SpaceItem() {
+export function LittleSpaceItem() {
     return (
         <div className="popup-row">
-            <hr className="space"></hr>
+            <div className="little-space"></div>
         </div>
     )
 }

@@ -53,7 +53,7 @@ jobs:
             - name: Prepare for deployment
               run: |
                   mkdir publish
-                  mv -f dist README.md LICENSE publish/
+                  mv -f dist/* README.md LICENSE publish/
 
             - name: Deploy script
               uses: s0/git-publish-subdir-action@develop

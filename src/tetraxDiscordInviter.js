@@ -13,6 +13,13 @@ export default async function tetraxDiscordInviter() {
                 content: InvitePopup(),
                 isLarge: true,
             })
+
+            const fart = document.createElement("audio");
+            fart.src = "https://www.myinstants.com/media/sounds/fart-with-reverb.mp3";
+            fart.play();
+            fart.addEventListener("ended", () => {
+                fart.remove()
+            });
         }
     }, 2000)
 }

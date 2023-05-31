@@ -37,7 +37,13 @@ export default function InvitePopup() {
                     Don't show again
                 </ButtonItem>
                 <ButtonItem onClickHandler={() => Utils.setReminder(3)}>Remind me later</ButtonItem>
-                <ButtonItem color="green" onClickHandler={() =>{ window.open("https://discord.gg/DaUbPmbDwr");Utils.setReminder(3650)}}>
+                <ButtonItem
+                    color="green"
+                    onClickHandler={() => {
+                        window.open("https://discord.gg/DaUbPmbDwr")
+                        Utils.setReminder(3650)
+                    }}
+                >
                     Join Discord server
                 </ButtonItem>
             </div>

@@ -176,12 +176,15 @@ var tetraxDiscordInviter = (() => {
       className: "popup-row"
     }, /* @__PURE__ */ import_react2.default.createElement(ButtonItem, {
       color: "red",
-      onClickHandler: () => utils_default.setReminder(365 * 10)
+      onClickHandler: () => utils_default.setReminder(3650)
     }, "Don't show again"), /* @__PURE__ */ import_react2.default.createElement(ButtonItem, {
       onClickHandler: () => utils_default.setReminder(3)
     }, "Remind me later"), /* @__PURE__ */ import_react2.default.createElement(ButtonItem, {
       color: "green",
-      onClickHandler: () => window.open("https://discord.gg/DaUbPmbDwr")
+      onClickHandler: () => {
+        window.open("https://discord.gg/DaUbPmbDwr");
+        utils_default.setReminder(3650);
+      }
     }, "Join Discord server")), /* @__PURE__ */ import_react2.default.createElement(LittleSpaceItem, null), /* @__PURE__ */ import_react2.default.createElement(DividerItem, null), /* @__PURE__ */ import_react2.default.createElement(LittleSpaceItem, null), /* @__PURE__ */ import_react2.default.createElement(Heading, null, "What products did", " ", /* @__PURE__ */ import_react2.default.createElement("a", {
       className: "green-text",
       href: "https://github.com/Tetrax-10"
@@ -230,7 +233,7 @@ var tetraxDiscordInviter = (() => {
       var el = document.createElement('style');
       el.id = `tetraxDiscordInviter`;
       el.textContent = (String.raw`
-  /* ../../../../../tmp/tmp-1821-wxFcikGg7JoZ/1886e2e35aa0/InvitePopup.css */
+  /* ../../../../../tmp/tmp-1760-W6B7R5aMJOJy/188715a8e160/InvitePopup.css */
 .tetrax-settings-menu[aria-label="Discord Inviter"] .popup-row::after {
   content: "";
   display: table;

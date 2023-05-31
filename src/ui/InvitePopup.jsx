@@ -33,11 +33,11 @@ export default function InvitePopup() {
             </div>
             <LittleSpaceItem></LittleSpaceItem>
             <div className="popup-row">
-                <ButtonItem color="red" onClickHandler={() => Utils.setReminder(365 * 10)}>
+                <ButtonItem color="red" onClickHandler={() => Utils.setReminder(3650)}>
                     Don't show again
                 </ButtonItem>
                 <ButtonItem onClickHandler={() => Utils.setReminder(3)}>Remind me later</ButtonItem>
-                <ButtonItem color="green" onClickHandler={() => window.open("https://discord.gg/DaUbPmbDwr")}>
+                <ButtonItem color="green" onClickHandler={() =>{ window.open("https://discord.gg/DaUbPmbDwr");Utils.setReminder(3650)}}>
                     Join Discord server
                 </ButtonItem>
             </div>

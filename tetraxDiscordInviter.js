@@ -50,7 +50,7 @@ var tetraxDiscordInviter = (() => {
       }
     }, children);
   }
-  function DescriptionItem({ children = "Description" } = {}) {
+  function DescriptionItem({ children = "" } = {}) {
     const hasHighlight = import_react.default.Children.toArray(children).some((child) => child.type && child.type.name === "Highlight");
     return /* @__PURE__ */ import_react.default.createElement(import_react.default.Fragment, null, hasHighlight ? /* @__PURE__ */ import_react.default.createElement("div", {
       className: "popup-row"
@@ -62,7 +62,7 @@ var tetraxDiscordInviter = (() => {
       className: "col description"
     }, children)));
   }
-  function Highlight({ children = "Highlight", color = "" } = {}) {
+  function Highlight({ children = "", color = "" } = {}) {
     return /* @__PURE__ */ import_react.default.createElement("span", {
       className: color ? " " + color : ""
     }, children);
@@ -80,6 +80,12 @@ var tetraxDiscordInviter = (() => {
     }, /* @__PURE__ */ import_react.default.createElement("div", {
       className: "little-space"
     }));
+  }
+  function LinkItem({ children = "", link = "", isGreen = true }) {
+    return /* @__PURE__ */ import_react.default.createElement("a", {
+      className: (isGreen ? "green-text " : "") + "link",
+      href: link
+    }, children);
   }
   function space(n) {
     return "\xA0".repeat(n);
@@ -148,31 +154,31 @@ var tetraxDiscordInviter = (() => {
     return /* @__PURE__ */ import_react2.default.createElement("div", {
       className: "tetrax-settings-menu",
       "aria-label": "Discord Inviter"
-    }, /* @__PURE__ */ import_react2.default.createElement(Heading, null, "Dear users,"), /* @__PURE__ */ import_react2.default.createElement("p", null), /* @__PURE__ */ import_react2.default.createElement(DescriptionItem, null, space(15), "We are delighted to extend an invitation to our exclusive Discord support server.", " ", /* @__PURE__ */ import_react2.default.createElement(Highlight, {
+    }, /* @__PURE__ */ import_react2.default.createElement(Heading, null, "Dear users,"), /* @__PURE__ */ import_react2.default.createElement("p", null), /* @__PURE__ */ import_react2.default.createElement(DescriptionItem, null, space(15), "We are delighted to extend an invitation to our Discord support server.", " ", /* @__PURE__ */ import_react2.default.createElement(Highlight, {
       color: "red-text"
-    }, "Need help"), " or ", /* @__PURE__ */ import_react2.default.createElement(Highlight, {
-      color: "red-text"
-    }, "have questions"), "? Join our Discord support server and gain instant access to our dedicated support team. Remember, we recognize that your time is precious, that's why we've crafted this support server."), /* @__PURE__ */ import_react2.default.createElement(DividerItem, null), /* @__PURE__ */ import_react2.default.createElement(LittleSpaceItem, null), /* @__PURE__ */ import_react2.default.createElement("div", {
+    }, "Need help or have questions with our Spicetify Themes or Extensions?"), " Join our Discord support server to ask for help so our helpers will assist and solve your issues. We created this support server as many people ask for help in our ", /* @__PURE__ */ import_react2.default.createElement(LinkItem, {
+      link: "https://github.com/Tetrax-10/Nord-Spotify/issues?q="
+    }, "Github issue page"), " which is a place to report bugs in our themes, extensions."), /* @__PURE__ */ import_react2.default.createElement(DividerItem, null), /* @__PURE__ */ import_react2.default.createElement(LittleSpaceItem, null), /* @__PURE__ */ import_react2.default.createElement("div", {
       className: "popup-row"
     }, /* @__PURE__ */ import_react2.default.createElement("h3", {
       className: "div-title"
-    }, "Why Tetrax Server instead of Spicetify Server?"), /* @__PURE__ */ import_react2.default.createElement("div", {
+    }, "Why Tetrax's Server instead of Spicetify Server?"), /* @__PURE__ */ import_react2.default.createElement("div", {
       style: { paddingLeft: "50px" }
     }, /* @__PURE__ */ import_react2.default.createElement("div", {
       style: { display: "list-item" }
-    }, "Full support for tetrax's products"), /* @__PURE__ */ import_react2.default.createElement("div", {
+    }, "Full support for tetrax's themes and extensions"), /* @__PURE__ */ import_react2.default.createElement("div", {
       style: { display: "list-item" }
-    }, "Product specific FAQs"), /* @__PURE__ */ import_react2.default.createElement("div", {
+    }, "Themes/Extensions specific FAQs"), /* @__PURE__ */ import_react2.default.createElement("div", {
       style: { display: "list-item" }
     }, "Suggest features that you did like to have"), /* @__PURE__ */ import_react2.default.createElement("div", {
       style: { display: "list-item" }
-    }, "Get exclusive product update"), /* @__PURE__ */ import_react2.default.createElement("div", {
+    }, "Get quick feature updates"), /* @__PURE__ */ import_react2.default.createElement("div", {
       style: { display: "list-item" }
     }, "Community Events"), /* @__PURE__ */ import_react2.default.createElement("div", {
       style: { display: "list-item" }
-    }, "Suggest new extension ideas"), /* @__PURE__ */ import_react2.default.createElement("div", {
+    }, "Suggest new Spicetify extension ideas"), /* @__PURE__ */ import_react2.default.createElement("div", {
       style: { display: "list-item" }
-    }, "Report bugs that will be fixed within next update"))), /* @__PURE__ */ import_react2.default.createElement(LittleSpaceItem, null), /* @__PURE__ */ import_react2.default.createElement("div", {
+    }, "Report bugs that will be fixed within few days"))), /* @__PURE__ */ import_react2.default.createElement(LittleSpaceItem, null), /* @__PURE__ */ import_react2.default.createElement("div", {
       className: "popup-row"
     }, /* @__PURE__ */ import_react2.default.createElement(ButtonItem, {
       color: "red",
@@ -185,16 +191,22 @@ var tetraxDiscordInviter = (() => {
         window.open("https://discord.gg/DaUbPmbDwr");
         utils_default.setReminder(3650);
       }
-    }, "Join Discord server")), /* @__PURE__ */ import_react2.default.createElement(LittleSpaceItem, null), /* @__PURE__ */ import_react2.default.createElement(DividerItem, null), /* @__PURE__ */ import_react2.default.createElement(LittleSpaceItem, null), /* @__PURE__ */ import_react2.default.createElement(Heading, null, "What products did", " ", /* @__PURE__ */ import_react2.default.createElement("a", {
-      className: "green-text",
-      href: "https://github.com/Tetrax-10"
-    }, "Tetrax"), " ", "create that I use?"), /* @__PURE__ */ import_react2.default.createElement(LittleSpaceItem, null), /* @__PURE__ */ import_react2.default.createElement("div", {
+    }, "Join Discord server")), /* @__PURE__ */ import_react2.default.createElement(LittleSpaceItem, null), /* @__PURE__ */ import_react2.default.createElement(DividerItem, null), /* @__PURE__ */ import_react2.default.createElement(LittleSpaceItem, null), /* @__PURE__ */ import_react2.default.createElement(Heading, null, "What ", /* @__PURE__ */ import_react2.default.createElement(LinkItem, {
+      link: "https://github.com/Tetrax-10/Nord-Spotify"
+    }, "Spicetify themes"), " and", " ", /* @__PURE__ */ import_react2.default.createElement(LinkItem, {
+      link: "https://github.com/Tetrax-10/Spicetify-Extensions"
+    }, "extensions"), " did", " ", /* @__PURE__ */ import_react2.default.createElement(LinkItem, {
+      link: "https://github.com/Tetrax-10"
+    }, "Tetrax"), " create that I use?"), /* @__PURE__ */ import_react2.default.createElement(LittleSpaceItem, null), /* @__PURE__ */ import_react2.default.createElement("div", {
+      className: "popup-row",
       style: { display: "-webkit-inline-box" }
-    }, /* @__PURE__ */ import_react2.default.createElement("b", null, "Theme :"), /* @__PURE__ */ import_react2.default.createElement("a", {
-      className: shared_default.installed.theme ? "green-text" : "",
-      href: shared_default.themes.nord.link
-    }, space(1) + "Nord")), /* @__PURE__ */ import_react2.default.createElement(LittleSpaceItem, null), /* @__PURE__ */ import_react2.default.createElement("div", null, /* @__PURE__ */ import_react2.default.createElement("b", null, "Extensions :"), Object.keys(shared_default.extensions).map((extension) => /* @__PURE__ */ import_react2.default.createElement("a", {
-      className: shared_default.installed.extensions.includes(extension) ? "green-text" : "",
+    }, /* @__PURE__ */ import_react2.default.createElement("b", null, "Themes :"), /* @__PURE__ */ import_react2.default.createElement(LinkItem, {
+      isGreen: shared_default.installed.theme ? true : false,
+      link: shared_default.themes.nord.link
+    }, space(1) + "Nord")), /* @__PURE__ */ import_react2.default.createElement(LittleSpaceItem, null), /* @__PURE__ */ import_react2.default.createElement("div", {
+      className: "popup-row"
+    }, /* @__PURE__ */ import_react2.default.createElement("b", null, "Extensions :"), Object.keys(shared_default.extensions).map((extension) => /* @__PURE__ */ import_react2.default.createElement("a", {
+      className: (shared_default.installed.extensions.includes(extension) ? "green-text " : "") + "link",
       style: { paddingLeft: "60px", display: "block" },
       href: shared_default.extensions[extension].link
     }, space(1) + shared_default.extensions[extension].name, ","))));
@@ -233,7 +245,7 @@ var tetraxDiscordInviter = (() => {
       var el = document.createElement('style');
       el.id = `tetraxDiscordInviter`;
       el.textContent = (String.raw`
-  /* ../../../../../tmp/tmp-1760-W6B7R5aMJOJy/188715a8e160/InvitePopup.css */
+  /* ../../../../../tmp/tmp-1825-qEOQl7Uz9cpi/1887bc2187e0/InvitePopup.css */
 .tetrax-settings-menu[aria-label="Discord Inviter"] .popup-row::after {
   content: "";
   display: table;
@@ -282,6 +294,9 @@ var tetraxDiscordInviter = (() => {
 }
 .tetrax-settings-menu[aria-label="Discord Inviter"] .popup-row .input-wrapper {
   display: flex;
+}
+.tetrax-settings-menu[aria-label="Discord Inviter"] .popup-row .link:hover {
+  color: var(--spice-custom-link-hover, var(--spice-button));
 }
 .tetrax-settings-menu[aria-label="Discord Inviter"] button.checkbox {
   align-items: center;

@@ -24,7 +24,7 @@ export function ButtonItem({ color = "", children = "", onClickHandler = () => {
     )
 }
 
-export function DescriptionItem({ children = "Description" } = {}) {
+export function DescriptionItem({ children = "" } = {}) {
     const hasHighlight = React.Children.toArray(children).some((child) => child.type && child.type.name === "Highlight")
 
     return (
@@ -44,7 +44,7 @@ export function DescriptionItem({ children = "Description" } = {}) {
     )
 }
 
-export function Highlight({ children = "Highlight", color = "" } = {}) {
+export function Highlight({ children = "", color = "" } = {}) {
     return <span className={color ? " " + color : ""}>{children}</span>
 }
 
@@ -61,6 +61,14 @@ export function LittleSpaceItem() {
         <div className="popup-row">
             <div className="little-space"></div>
         </div>
+    )
+}
+
+export function LinkItem({ children = "", link = "", isGreen = true }) {
+    return (
+        <a className={(isGreen ? "green-text " : "") + "link"} href={link}>
+            {children}
+        </a>
     )
 }
 

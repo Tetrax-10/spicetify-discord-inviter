@@ -49,6 +49,9 @@
         .input-wrapper {
             display: flex;
         }
+        .link:hover {
+            color: var(--spice-custom-link-hover, var(--spice-button));
+        }
     }
 
     button.checkbox {
